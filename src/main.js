@@ -15,9 +15,16 @@ import Quasar from 'quasar'
 
 Vue.use(Quasar, {
   config: {}
- })
+})
 
+window.EventBus = new Vue();
 Vue.config.productionTip = false
+
+import Components from './components';
+
+Object.keys(Components).forEach(name => {
+  Vue.component(name, Components[name]);
+});
 
 new Vue({
   router,
