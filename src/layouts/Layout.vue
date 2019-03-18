@@ -1,9 +1,9 @@
 <template>
 	<q-layout view="lHh Lpr lFf">
 		<q-layout-header reveal>
-			<q-toolbar color="primary" min-height="70">
+			<q-toolbar color="indigo" min-height="70">
 				<q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu" icon="menu" />
-				<q-toolbar-title>Kirosam</q-toolbar-title>
+				<q-toolbar-title>KIROSAM</q-toolbar-title>
 			</q-toolbar>
 		</q-layout-header>
 
@@ -11,7 +11,7 @@
 			<q-list no-border link inset-delimiter>
 				<q-list no-border link inset-delimiter>
 					<q-list-header>Navigation</q-list-header>
-					<q-item to="/dashboard">
+					<q-item to="/employee-management">
 						<q-item-side icon="mdi-monitor-dashboard" />
 						<q-item-main label="Dashboard" />
 					</q-item>

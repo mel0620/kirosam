@@ -9,7 +9,7 @@
                     </q-item-main>
                 </q-item>
                 <div slot="right">
-                    <q-btn to="/dashboard/add-employee" no-caps icon="mdi-plus" color="secondary" label="Add Employee"></q-btn>
+                    <q-btn to="/employee-management/add-employee" no-caps icon="mdi-plus" color="secondary" label="Add Employee"></q-btn>
                 </div>
             </q-card-title>
         </q-card>
@@ -27,7 +27,6 @@
                 </div>
             </div>
         </div>
-
     </q-page>
 </template>
 
