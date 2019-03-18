@@ -174,10 +174,107 @@
                 </div>
             </q-tab-pane>
             <q-tab-pane name="salaryDetails">
-
+                <div class="row">
+                    <div class="col-xl-12">
+                        <q-card class="no-shadow q-pa-md">
+                            <div class="row gutter-xs">
+                                <div class="col">
+                                    <q-checkbox v-model="minwage" label="Minimum Wage Earner" />
+                                </div>
+                                <div class="col">
+                                    <q-checkbox v-model="declare" label="Declare Salary for SSS, Philhealth and Tax?" />
+                                </div>
+                            </div>
+                            <div class="row gutter-xs q-mt-md">
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="Monthly Rate" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="Montly COLA" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                            </div>
+                            <div class="row gutter-xs q-mt-xs">
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="Daily Rate" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="Daily COLA" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                            </div>
+                            <div class="row gutter-xs q-mt-xs">
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="Hourly Rate" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="Hourly COLA" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                            </div>
+                            <div class="row gutter-xs q-mt-xs">
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="Declared PHIC Salary" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="Declared SSS Salary" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                            </div>
+                            <div class="row gutter-xs q-mt-xs">
+                                <div class="col-6">
+                                    <q-field>
+                                        <q-input color="white" float-label="Declared Taxable Salary" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                            </div>
+                        </q-card>
+                    </div>
+                </div>
             </q-tab-pane>
             <q-tab-pane name="governmentNumbers">
-
+                <div class="row">
+                    <div class="col-xl-12">
+                        <q-card class="no-shadow q-pa-md">
+                            <div class="row gutter-xs">
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="TIN" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="SSS Number" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                            </div>
+                            <div class="row gutter-xs q-mt-xs">
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="HDMF Number" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                                <div class="col">
+                                    <q-field>
+                                        <q-input color="white" float-label="PHIC Number" inverted-light value="" />
+                                    </q-field>
+                                </div>
+                            </div>
+                        </q-card>
+                    </div>
+                </div>
             </q-tab-pane>
             <q-tab-pane name="jobInfo">
 
@@ -191,6 +288,8 @@
         name: 'AddEmployee',
         data() {
             return {
+                minwage: false,
+                declare: false,
                 address: false,
                 gender: 'male',
                 genderOptions: [{
