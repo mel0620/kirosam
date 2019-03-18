@@ -3,11 +3,7 @@
 		<q-layout-header reveal>
 			<q-toolbar color="primary" min-height="70">
 				<q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu" icon="menu" />
-
-				<q-toolbar-title>
-					Quasar
-					<!-- <div slot="subtitle">Running on Quasar v{{ $q.version }}</div> -->
-				</q-toolbar-title>
+				<q-toolbar-title>Kirosam</q-toolbar-title>
 			</q-toolbar>
 		</q-layout-header>
 
@@ -15,13 +11,29 @@
 			<q-list no-border link inset-delimiter>
 				<q-list no-border link inset-delimiter>
 					<q-list-header>Navigation</q-list-header>
-					<q-item to="/" exact>
-						<q-item-side icon="home" />
-						<q-item-main label="Home" />
+					<q-item to="/dashboard">
+						<q-item-side icon="mdi-monitor-dashboard" />
+						<q-item-main label="Dashboard" />
 					</q-item>
-					<q-item to="/about">
-						<q-item-side icon="info_outline" />
-						<q-item-main label="About" />
+					<q-item to="/hris">
+						<q-item-side icon="mdi-account-group-outline" />
+						<q-item-main label="HRIS" />
+					</q-item>
+					<q-item to="/configuration">
+						<q-item-side icon="mdi-settings-outline" />
+						<q-item-main label="Configuration" />
+					</q-item>
+					<q-item to="/timekeeping">
+						<q-item-side icon="mdi-timetable" />
+						<q-item-main label="Time Keeping" />
+					</q-item>
+					<q-item to="/payroll">
+						<q-item-side icon="mdi-fingerprint" />
+						<q-item-main label="Payroll Processing" />
+					</q-item>
+					<q-item to="/reports">
+						<q-item-side icon="mdi-finance" />
+						<q-item-main label="Reports" />
 					</q-item>
 					<q-item-separator />
 				</q-list>
