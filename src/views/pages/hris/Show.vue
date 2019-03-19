@@ -21,6 +21,7 @@
             <q-tab class="capitalize" name="jobInfo" slot="title" label="Job Information" />
             <q-tab class="capitalize" name="shift" slot="title" label="Shift" />
             <q-tab class="capitalize" name="documents" slot="title" label="Documents" />
+            <q-tab class="capitalize" name="memo" slot="title" label="Memo" />
 
             <q-tab-pane name="basicInfo">
                 <div class="row gutter-sm">
@@ -206,9 +207,8 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <q-card class="no-shadow q-pa-md">
-                            <div class="row gutter-xs q-mb-md">
-                                <div class="col-6"></div>
-                                <div class="col-6">
+                            <div class="row gutter-xs q-mb-md justify-end">
+                                <div class="">
                                     <div class="row gutter-xs">
                                         <div><q-btn push icon="mdi-pencil" no-caps rounded color="primary" label="Create Salary Adjustment"></q-btn></div>
                                         <div><q-btn push icon="mdi-format-list-bulleted" no-caps rounded color="teal" label="Salary Information List"></q-btn></div>
@@ -291,9 +291,8 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <q-card class="no-shadow q-pa-md">
-                            <div class="row gutter-xs q-mb-md">
-                                <div class="col-6"></div>
-                                <div class="col-6">
+                            <div class="row gutter-xs q-mb-md justify-end">
+                                <div class="">
                                     <div class="row gutter-xs">
                                         <div><q-btn push icon="mdi-pencil" no-caps rounded color="primary" label="Create Job Adjustment"></q-btn></div>
                                         <div><q-btn push icon="mdi-format-list-bulleted" no-caps rounded color="teal" label="Job Information List"></q-btn></div>
@@ -399,19 +398,57 @@
                         <q-card class="no-shadow q-pa-md">
                             <div class="row">
                                 <div class="col-3 col-md-4 col-sm-12 col-xs-12">
-                                    <q-uploader stack-label="Choose Document File" url="url" />
+                                    <q-uploader multiple stack-label="Choose Document File" url="url" />
                                 </div>
                             </div>
                             <div class="row q-mt-md">
                                 <div class="col">
-                                    <q-table :data="tableData" :columns="columns" row-key="name" hide-bottom>
-
-                                    </q-table>
+                                    <div class="file">
+                                        <div class="file__wrapper">
+                                            <div class="file__action-check">
+                                                <q-checkbox v-model="selectFile" color="teal"/>
+                                            </div>
+                                            <div class="file__info">
+                                                <div class="file__icon">
+                                                    <q-icon size="2rem" name="mdi-file-word-box" color="blue" />
+                                                </div>
+                                                <div class="file__desc">
+                                                    <div class="file__name q-title">Resume.docx</div>
+                                                    <div class="file__datetime q-caption text-grey-8">Date of Importation: 2/19/12</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="file__action-delete">
+                                            <q-btn color="red-12" push no-caps icon="mdi-trash-can-outline" label="Delete"></q-btn>
+                                        </div>
+                                    </div>
+                                    <div class="file">
+                                        <div class="file__wrapper">
+                                            <div class="file__action-check">
+                                                <q-checkbox v-model="selectFile" color="teal"/>
+                                            </div>
+                                            <div class="file__info">
+                                                <div class="file__icon">
+                                                    <q-icon size="2rem" name="mdi-file-pdf" color="red-8" />
+                                                </div>
+                                                <div class="file__desc">
+                                                    <div class="file__name q-title">Medical.pdf</div>
+                                                    <div class="file__datetime q-caption text-grey-8">Date of Importation: 2/19/12</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="file__action-delete">
+                                            <q-btn color="red-12" push no-caps icon="mdi-trash-can-outline" label="Delete"></q-btn>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </q-card>
                     </div>
                 </div>
+            </q-tab-pane>
+            <q-tab-pane name="memo">
+
             </q-tab-pane>
         </q-tabs>
     </q-page>
@@ -422,6 +459,7 @@
         name: 'AddEmployee',
         data() {
             return {
+                selectFile: false,
                 birthdate: null,
                 datehired: null,
                 dateend: null,
@@ -498,18 +536,6 @@
                         value: 'shift'
                     },
                 ],
-                columns: [
-                    { name: 'filename',         required: true, label: 'File Name',         align: 'left', field: 'filename',           sortable: false, classes: 'th-class', style: 'width: 500px' },
-                    { name: 'imortation_time',  required: true, label: 'Importation Time',  align: 'left', field: 'imortation_time',    sortable: false, classes: 'th-class', style: 'width: 500px' },
-                    { name: 'action',           required: true, label: 'Action',            align: 'left', field: 'action',             sortable: false, classes: 'th-class', style: 'width: 500px' },
-                ],
-                tableData: [
-                    {
-                        filename: '',
-                        imortation_time: '',
-                        action: '',
-                    },
-                ]
             }
         }
     }
@@ -527,4 +553,32 @@
         height 120px
         width 120px
 
+.file
+    display flex
+    align-items center
+    justify-content space-between
+    border-top 1px solid rgba(#000, .1)
+    border-left 1px solid rgba(#000, .1)
+    border-right 1px solid rgba(#000, .1)
+    padding: .75rem
+    cursor pointer
+
+    &:hover {
+        background-color rgba(#000, .02)
+    }
+
+    &__wrapper
+        display flex
+        align-items center
+
+        .file__info
+            display flex
+            align-items center
+            margin-left .85rem
+
+            .file__desc
+                margin-left .85rem
+
+.file:last-child
+    border-bottom 1px solid rgba(#000, .1)
 </style>
