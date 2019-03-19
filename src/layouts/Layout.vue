@@ -11,7 +11,7 @@
 			<q-list no-border link inset-delimiter>
 				<q-list no-border link inset-delimiter>
 					<q-list-header>Navigation</q-list-header>
-					<q-item to="/employee-management">
+					<q-item to="/dashboard">
 						<q-item-side icon="mdi-monitor-dashboard" />
 						<q-item-main label="Dashboard" />
 					</q-item>
