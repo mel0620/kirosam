@@ -1,7 +1,7 @@
 <template>
     <q-page padding>
         <q-card class="bg-grey-12">
-            <q-card-title>
+            <q-card-title v-if="$q.platform.is.desktop">
                 <q-item class="row items-center">
                     <q-icon name="mdi-account-group" size="3rem" color="dark"></q-icon>
                     <q-item-main class="q-ml-md">
@@ -12,19 +12,30 @@
                     <q-btn push rounded to="/hris/add-employee" no-caps icon="mdi-plus" color="secondary" label="Add Employee"></q-btn>
                 </div>
             </q-card-title>
+            <q-card-title v-if="$q.platform.is.mobile">
+                <q-item class="row items-center">
+                    <q-icon name="mdi-account-group" size="2rem" color="dark"></q-icon>
+                    <q-item-main class="q-ml-sm">
+                        <q-item-tile class="q-title text-dark">Employees (119)</q-item-tile>
+                    </q-item-main>
+                </q-item>
+                <div slot="right">
+                    <q-btn push round to="/hris/add-employee" no-caps icon="mdi-plus" color="secondary"></q-btn>
+                </div>
+            </q-card-title>
         </q-card>
 
         <div class="q-mt-lg">
             <div class="row gutter-sm justify-end items-end">
-                <div class="col-xl-2">
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12">
                     <q-select stack-label="Filter by Company" inverted-light class="text-white" color="grey-12" separator
                         v-model="selectCompany" :options="companyOptions" />
                 </div>
-                <div class="col-xl-2">
+                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12">
                     <q-select stack-label="Filter by Job Title" inverted-light class="text-white" color="grey-12" separator
                         v-model="selectJob" :options="jobOptions" />
                 </div>
-                <div class="col-xl-3">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
                     <q-input value="" class="q-py-sm" placeholder="Search" inverted-light color="grey-12" :before="[{icon: 'mdi-magnify', handler () {}}]" />
                 </div>
             </div>
