@@ -65,7 +65,7 @@
                                 </div>
                             </div>
 
-                            <div class="title q-pt-xl q-pb-sm text-weight-bold text-grey-7">PAYMENT ADDRESS</div>
+                            <div class="title q-pt-xl q-pb-sm text-weight-bold text-grey-7">PERMANENT ADDRESS</div>
 
                             <div class="row gutter-xs">
                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -89,7 +89,7 @@
                             </div>
 
                             <div class="title q-pt-xl q-pb-sm text-grey-7 row items-center">
-                                <span class="text-weight-bold q-mr-md">PAYMENT ADDRESS</span>
+                                <span class="text-weight-bold q-mr-md">PRESENT ADDRESS</span>
                                 <q-checkbox v-model="address" label="Same as Permanent Address" />
                             </div>
 
