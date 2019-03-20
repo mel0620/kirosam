@@ -396,9 +396,12 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <q-card class="no-shadow q-pa-md">
-                            <div class="row">
-                                <div class="col-3 col-md-4 col-sm-12 col-xs-12">
+                            <div class="row gutter-md item-end justify-between">
+                                <div class="col-xl-3 col-md-4 col-sm-12 col-xs-12">
                                     <q-uploader multiple stack-label="Choose Document File" url="url" />
+                                </div>
+                                <div class="col-xl-3 col-md-4 col-sm-12 col-xs-12">
+                                    <q-input value="" class="q-py-sm" placeholder="Search file name here" inverted-light color="grey-12" :before="[{icon: 'mdi-magnify', handler () {}}]" />
                                 </div>
                             </div>
                             <div class="row q-mt-md">
@@ -419,7 +422,7 @@
                                             </div>
                                         </div>
                                         <div class="file__action-delete">
-                                            <q-btn color="red-12" push no-caps icon="mdi-trash-can-outline" label="Delete"></q-btn>
+                                            <q-btn color="red-12" rounded push no-caps icon="mdi-trash-can-outline" label="Delete"></q-btn>
                                         </div>
                                     </div>
                                     <div class="file">
@@ -438,7 +441,7 @@
                                             </div>
                                         </div>
                                         <div class="file__action-delete">
-                                            <q-btn color="red-12" push no-caps icon="mdi-trash-can-outline" label="Delete"></q-btn>
+                                            <q-btn color="red-12" rounded push no-caps icon="mdi-trash-can-outline" label="Delete"></q-btn>
                                         </div>
                                     </div>
                                 </div>
@@ -448,7 +451,47 @@
                 </div>
             </q-tab-pane>
             <q-tab-pane name="memo">
-
+                <div class="row">
+                    <div class="col-xl-12">
+                        <q-card class="no-shadow q-pa-md">
+                            <div class="row items-center justify-between">
+                                <div class="col-xl-3 col-md-4 col-sm-12 col-xs-12">
+                                    <!-- <div class="row items-center q-headline">
+                                        <q-icon color="yellow-10" name="mdi-information-outline"></q-icon>
+                                        <div class="q-ml-md text-grey-8">Memo</div>
+                                    </div> -->
+                                    <q-btn rounded no-caps push icon="mdi-plus" icon-right="mdi-information-outline" color="yellow-10" label="Add Memo"></q-btn>
+                                </div>
+                                <div class="col-xl-3 col-md-4 col-sm-12 col-xs-12">
+                                    <q-input value="" class="q-py-sm" placeholder="Search" inverted-light color="grey-12" :before="[{icon: 'mdi-magnify', handler () {}}]" />
+                                </div>
+                            </div>
+                            <div class="row gutter-xs items-center q-mt-lg q-pb-sm" style="border-bottom: 1px solid rgba(0,0,0,.1)">
+                                <div class="col">
+                                    <q-select float-label="Offense Type" inverted-light color="white" separator
+                                        v-model="offenseType" :options="offenseTypeOptions" />
+                                </div>
+                                <div class="col">
+                                    <q-select float-label="Offense Level" inverted-light color="white" separator
+                                        v-model="offenseLevel" :options="offenseLevelOptions" />
+                                </div>
+                                <div class="col">
+                                    <q-select float-label="Action" inverted-light color="white" separator
+                                        v-model="offenseAction" :options="offenseActionOptions" />
+                                </div>
+                                <div class="col">
+                                    <q-datetime v-model="dateOffense" color="white" inverted-light float-label="Date" value="" />
+                                </div>
+                                <div class="col">
+                                    <q-input color="white" type="textarea" float-label="Remarks" inverted-light value="" :max-height="50" />
+                                </div>
+                                <div class="">
+                                    <q-btn round push color="red" icon="mdi-minus-box-outline"></q-btn>
+                                </div>
+                            </div>
+                        </q-card>
+                    </div>
+                </div>
             </q-tab-pane>
         </q-tabs>
     </q-page>
@@ -534,6 +577,24 @@
                 shiftScheduleOptions: [{
                         label: 'Select Shift Schedule',
                         value: 'shift'
+                    },
+                ],
+                offenseType: 'bullying',
+                offenseTypeOptions: [{
+                        label: 'Bullying',
+                        value: 'bullying'
+                    },
+                ],
+                offenseLevel: 'first',
+                offenseLevelOptions: [{
+                        label: 'First',
+                        value: 'first'
+                    },
+                ],
+                offenseAction: 'suspension',
+                offenseActionOptions: [{
+                        label: 'Suspension',
+                        value: 'suspension'
                     },
                 ],
             }

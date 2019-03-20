@@ -1,6 +1,9 @@
 <template>
     <q-page padding>
-        <div class="q-display-1 text-dark">Add New Employee</div>
+        <div class="q-display-1 text-dark row items-center">
+            <q-icon name="mdi-account-plus-outline"></q-icon>
+            <div class="q-ml-md">Add New Employee</div>
+        </div>
 
         <!-- <q-breadcrumbs separator=">" active-color="blue-grey-7" color="light">
             <q-breadcrumbs-el label="Employee Information" to="" />
@@ -397,6 +400,26 @@
                                     <q-table :data="tableData" :columns="columns" row-key="name" hide-bottom>
 
                                     </q-table>
+                                </div>
+                            </div>
+                            <hr class="q-mt-xl q-mb-lg" style="opacity: .4">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="row q-headline text-grey-8">
+                                        <q-icon color="teal" name="mdi-file-import"></q-icon>
+                                        <div class="">Import</div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 row">
+                                    <q-btn push rounded no-caps color="teal" icon="mdi-download" label="Download Template" class="q-ml-auto"></q-btn>
+                                </div>
+                            </div>
+                            <div class="row gutter-md q-mt-sm items-end">
+                                <div class="col-3 col-md-4 col-sm-12 col-xs-12">
+                                    <q-uploader stack-label="Your CSV File Here" url="url" />
+                                </div>
+                                <div class="col-3">
+                                    <q-btn color="amber-9" no-caps icon="mdi-clipboard-text-outline" rounded label="Generate Import"></q-btn>
                                 </div>
                             </div>
                         </q-card>

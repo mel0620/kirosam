@@ -1,13 +1,13 @@
 <template>
 	<q-layout view="lHh Lpr lFf">
 		<q-layout-header reveal>
-			<q-toolbar color="indigo" min-height="70">
+			<q-toolbar color="indigo">
 				<q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu" icon="menu" />
 				<q-toolbar-title>KIROSAM</q-toolbar-title>
 			</q-toolbar>
 		</q-layout-header>
 
-		<q-layout-drawer v-model="leftDrawerOpen" :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null">
+		<q-layout-drawer v-model="leftDrawerOpen" :content-class="$q.theme === 'mat' ? 'bg-grey-1' : null">
 			<q-list no-border link inset-delimiter>
 				<q-list no-border link inset-delimiter>
 					<q-list-header>Navigation</q-list-header>

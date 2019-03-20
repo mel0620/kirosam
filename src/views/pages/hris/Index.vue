@@ -15,7 +15,7 @@
         </q-card>
 
         <div class="q-mt-lg">
-            <div class="row gutter-sm justify-end">
+            <div class="row gutter-sm justify-end items-end">
                 <div class="col-xl-2">
                     <q-select stack-label="Filter by Company" inverted-light class="text-white" color="grey-12" separator
                         v-model="selectCompany" :options="companyOptions" />
@@ -24,7 +24,7 @@
                     <q-select stack-label="Filter by Job Title" inverted-light class="text-white" color="grey-12" separator
                         v-model="selectJob" :options="jobOptions" />
                 </div>
-                <div class="col-xl-2">
+                <div class="col-xl-3">
                     <q-input value="" class="q-py-sm" placeholder="Search" inverted-light color="grey-12" :before="[{icon: 'mdi-magnify', handler () {}}]" />
                 </div>
             </div>
@@ -32,7 +32,24 @@
 
         <div class="q-mt-lg">
             <q-table :data="tableData" :columns="columns" row-key="name">
-
+                <q-tr slot = "body" slot-scope = "props" :props = "props">
+                    <q-td key = "employee_number" :props = "props">{{ props.row.employee_number }}</q-td>
+                    <q-td key = "employee_name" :props = "props">{{ props.row.employee_name }}</q-td>
+                    <q-td key = "date_hired" :props = "props">{{ props.row.date_hired }}</q-td>
+                    <q-td key = "employment_status" :props = "props">{{ props.row.employment_status }}</q-td>
+                    <q-td key = "company" :props = "props">{{ props.row.company }}</q-td>
+                    <q-td key = "job_title" :props = "props">{{ props.row.job_title }}</q-td>
+                    <q-td key = "actions" :props = "props">
+                        <div class="row gutter-xs">
+                            <div>
+                                <q-btn @click="$router.push('/hris/show-employee')" round flat color="teal" dense icon="mdi-eye"></q-btn>
+                            </div>
+                            <div>
+                                <q-btn round flat color="orange" dense icon="mdi-archive"></q-btn>
+                            </div>
+                        </div>
+                    </q-td>
+                </q-tr>
             </q-table>
         </div>
     </q-page>
@@ -40,7 +57,6 @@
 
 <style lang="stylus">
     @import '~variables'
-
 </style>
 
 <script>
@@ -69,12 +85,12 @@
                 ],
                 tableData: [
                     {
-                        employee_number: '',
-                        employee_name: '',
-                        date_hired: '',
-                        employment_status: '',
-                        company: '',
-                        job_title: '',
+                        employee_number: '002019',
+                        employee_name: 'Rommel Cuneta',
+                        date_hired: '05/19/2017',
+                        employment_status: 'Regular',
+                        company: 'StarApps',
+                        job_title: 'Frontend Developer',
                         actions: '',
                     },
                 ]
