@@ -7,8 +7,18 @@
                     <q-input color="white" value="" inverted-light class="" placeholder="Username / Email Address" />
                     <q-input color="white" value="" inverted-light class="q-mt-md" placeholder="Password" type="password" />
                     <q-btn icon="mdi-login-variant" push color="indigo" class="full-width q-mt-md" label="Login" to="/hris"></q-btn>
-                    <q-btn flat push color="white" class="q-mt-md capitalize" label="Forgot Password?"></q-btn> <span class="text-white q-caption q-mx-md">OR</span>
-                    <q-btn flat push color="white" class="q-mt-md capitalize before-line" label="Register Here"></q-btn>
+
+                    <div class="row items-center justify-center">
+                        <div class="col-12 col-md-12 col-sm-12 col-xs-12">
+                            <q-btn flat push color="white" class="q-mt-md capitalize" label="Forgot Password?"></q-btn>
+                        </div>
+                        <!-- <div class="col-12 col-md-12 col-sm-12 col-xs-12">
+                            <span class="text-white q-caption q-mx-md">OR</span>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xs-12">
+                            <q-btn flat push color="white" class="q-mt-md capitalize before-line" label="Register Here"></q-btn>
+                        </div> -->
+                    </div>
                 </form>
             </div>
         </q-card>
@@ -29,7 +39,7 @@
     text-align center
 
     .login-form {
-        background-color rgba(#fff ,.2)
+        background-color rgba(#fff ,.3)
         padding 1rem
         margin 0 auto
 
